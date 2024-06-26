@@ -1,4 +1,17 @@
-div {
-    border: 1px solid red;
+.cartao {
+    background-color: #4c4848;
+    border: #767575;
+    border-radius: 15px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+h3 {
+    margin-top: 50px;
+}
+
+
+div{
+    border: red solid 1px;
 }
 
