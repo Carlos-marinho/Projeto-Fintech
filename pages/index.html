@@ -16,7 +16,7 @@
 
     <main class="d-flex container-fluid"></main>
         <div class="principal row vh-100">
-            <div class="menu d-flex col-lg-2 flex-column p-4 mb-100 text-bg-dark">
+            <div class="d-flex col-lg-2 flex-column p-4 mb-100 text-bg-dark">
                 <h5>Dashboard</h5>
                 <hr>
                 <ul class="nav nav-pills flex-column mb-auto">
@@ -34,8 +34,8 @@
 
             <div class="d-flex col-lg flex-column mb-100 text-bg-dark">
                 <div class="container">
-                    <div class="row p-1 justify-content-between mt-2">
-                        <div class="cartao col-lg-3 flex-column p-5 mb-">
+                    <div class="row p-1 justify-content-between mt-3">
+                        <div class="cartao col-lg-3 flex-column p-5">
                             <h5>Saldo Atual</h5>
                             <h3>R$5.000,00</h3>
                         </div>
@@ -49,7 +49,7 @@
                         </div>
                     </div>
 
-                    <div class="row p-1 justify-content-around mt-2">
+                    <div class="row p-1 justify-content-around mt-3">
                         <div class="cartao col-lg-5 flex-column p-5 pt-4">
                             <h5>Receitas por Categoria</h5>
                             <div>
@@ -65,7 +65,7 @@
                         </div>
                     </div>
 
-                    <div class="row p-1 justify-content-center mt-2">
+                    <div class="row p-1 justify-content-center mt-3">
                         <div class="cartao col-lg-8 flex-column p-5 pt-4">
                             <h5>Receitas X Despesas</h5>
                             <div>
@@ -79,8 +79,44 @@
                             <h5>Adicionar Receita</h5>
                             <hr>
                             <form action="" class="form">
-                                <label for="data" id="date">Data:</label>
-                                <input type="date">
+                                <div class="row mb-3">
+                                    <div class="col-sm-12">
+                                        <label for="data" class="form-label">DATA:</label>
+                                        <input type="date" name="" id="data" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-sm-12">
+                                        <label for="categoriareceita" class="form-label">Categoria:</label>
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option disabled selected>Escolha uma opção</option>
+                                            <option value="1">Salário</option>
+                                            <option value="2">Freelancer</option>
+                                            <option value="3">Extras</option>
+                                          </select>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-sm-12">
+                                        <label for="valor" class="form-label">Valor: </label>
+                                        <input id="valor" type="text" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-sm-12">
+                                        <label for="observacao" class="form-label">Observação: </label>
+                                        <input id="observacao" type="text" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-center mb-3">
+                                    <div class="col-sm-6 text-center">
+                                        <button type="submit" class="btn btn-light">Adicionar</button>
+                                    </div>
+                                </div>
                             </form>
                         </div>
 
