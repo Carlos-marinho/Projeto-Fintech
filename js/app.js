@@ -12,9 +12,9 @@ const graficoBarraRecDesp = document.getElementById('graficoReceitasDespesas');
                 label: 'Receitas por Categoria',
                 data: [10000,3000,2000],
                 backgroundColor: [
-                '#BDAA00',
-                '#9C5353',
-                '#299D91'
+                '#E3CF1B',
+                '#B72D2D',
+                '#229A52'
                 ],
                 hoverOffset: 3
             }]
@@ -29,11 +29,12 @@ const graficoBarraRecDesp = document.getElementById('graficoReceitasDespesas');
             ],
             datasets: [{
                 label: 'Despesas por Categoria',
-                data: [300, 50, 100],
+                data: [5000, 2000, 2000, 1000],
                 backgroundColor: [
-                'rgb(255, 99, 132)',
+                '#B72D2D',
                 'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)'
+                '#E3CF1B',
+                '#229A52'
                 ],
                 hoverOffset: 4
             }]
@@ -46,12 +47,15 @@ const graficoBarraRecDesp = document.getElementById('graficoReceitasDespesas');
             labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
             datasets: [{
               label: 'Receitas',
-              data: [12, 19, 3, 5, 2, 3],
-              borderWidth: 5},
+              data: [12000, 9000, 7000, 5000, 6000, 8000],
+              borderWidth: 5,
+              backgroundColor: '#229A52'
+            },
 
               {label: 'Despesas',
-              data: [12, 19, 3, 5, 2, 3],
-              borderWidth: 5
+              data: [9000, 8000, 6900, 4500, 3000, 6000],
+              borderWidth: 5,
+              backgroundColor: '#B72D2D'
             }]
           },
           options: {
@@ -67,9 +71,23 @@ const graficoBarraRecDesp = document.getElementById('graficoReceitasDespesas');
         new Chart(graficoReceitasCat,{
             type: 'doughnut',
             data: data_grafico_pizza_receitas,
+            options: {
+                plugins: {
+                    legend: {
+                        position: 'right'
+                    }
+                }
+            }
         });
 
         new Chart(graficoDespesasCat,{
             type: 'doughnut',
             data: data_grafico_pizza_despesas,
+            options: {
+                plugins: {
+                    legend: {
+                        position: 'right'
+                    }
+                }
+            }
         });
