@@ -75,14 +75,30 @@
                     </div>
 
                     <div class="row p-1 justify-content-around mt-2">
-                        <div class="cartao col-lg-4 flex-column p-5 pt-4">
+                        <div class="cartao col-lg-5 flex-column p-5 pt-4">
                             <h5>Adicionar Receita</h5>
                             <hr>
                             <form action="" class="form">
                                 <div class="row mb-3">
                                     <div class="col-sm-12">
-                                        <label for="data" class="form-label">DATA:</label>
+                                        <label for="data" class="form-label">Data:</label>
                                         <input type="date" name="" id="data" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-sm-6 form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="tipoReceitaFixa">
+                                        <label class="form-check-label" for="tipoReceitaFixa">
+                                            Receita Fixa
+                                        </label>
+                                    </div>
+
+                                    <div class="col-sm-6 form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="tipoReceitaVariavel">
+                                        <label class="form-check-label" for="tipoReceitaVariavel">
+                                            Receita Variável
+                                        </label>
                                     </div>
                                 </div>
 
@@ -114,16 +130,76 @@
 
                                 <div class="row justify-content-center mb-3">
                                     <div class="col-sm-6 text-center">
-                                        <button type="submit" class="btn btn-light">Adicionar</button>
+                                        <button type="submit" class="btn btn-light p-2 px-5">Adicionar</button>
                                     </div>
                                 </div>
                             </form>
                         </div>
 
-                        <div class="cartao col-lg-4 flex-column p-5 pt-4">
+                        <div class="cartao col-lg-5 flex-column p-5 pt-4">
                             <h5>Adicionar Despesa</h5>
                             <hr>
+
+                            <form action="" class="form">
+                                <div class="row mb-3">
+                                    <div class="col-sm-12">
+                                        <label for="data" class="form-label">Data:</label>
+                                        <input type="date" name="" id="data" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-sm-6 form-check">
+                                        <input class="form-check-input" type="radio" name="tiposDespesa" id="tipoDespesaFixa">
+                                        <label class="form-check-label" for="tipoDespesaFixa">
+                                            Despesa Fixa
+                                        </label>
+                                    </div>
+
+                                    <div class="col-sm-6 form-check">
+                                        <input class="form-check-input" type="radio" name="tiposDespesa" id="tipoDespesaVariavel">
+                                        <label class="form-check-label" for="tipoDespesaVariavel">
+                                            Despesa Variável
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-sm-12">
+                                        <label for="categoriareceita" class="form-label">Categoria:</label>
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option disabled selected>Escolha uma opção</option>
+                                            <option value="1">Contas da Casa</option>
+                                            <option value="2">Mercado</option>
+                                            <option value="3">Cartão de Crédito</option>
+                                            <option value="4">Outros</option>
+                                          </select>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-sm-12">
+                                        <label for="valor" class="form-label">Valor: </label>
+                                        <input id="valor" type="text" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-sm-12">
+                                        <label for="observacao" class="form-label">Observação: </label>
+                                        <input id="observacao" type="text" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-center mb-3">
+                                    <div class="col-sm-6 text-center">
+                                        <button type="submit" class="btn btn-light p-2 px-5">Adicionar</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
+
+                        
                     </div>
                 </div>
             </div>
@@ -135,83 +211,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
-    <script>
-        const graficoBarraRecDesp = document.getElementById('graficoReceitasDespesas');
-        const graficoReceitasCat = document.getElementById('graficoReceitasCat');
-        const graficoDespesasCat = document.getElementById('graficoDespesasCat');
-
-        const data_grafico_pizza_receitas = {
-            labels: [
-                'Salário',
-                'Freelancer',
-                'Extras'
-            ],
-            datasets: [{
-                label: 'Receitas por Categoria',
-                data: [10000,3000,2000],
-                backgroundColor: [
-                '#BDAA00',
-                '#9C5353',
-                '#299D91'
-                ],
-                hoverOffset: 3
-            }]
-            };
-
-        const data_grafico_pizza_despesas = {
-            labels: [
-                'Mercado',
-                'Contas Fixas',
-                'Cartão de Crédito',
-                'Outros'
-            ],
-            datasets: [{
-                label: 'Despesas por Categoria',
-                data: [300, 50, 100],
-                backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)'
-                ],
-                hoverOffset: 4
-            }]
-            };
-        
-
-        new Chart(graficoBarraRecDesp, {
-          type: 'bar',
-          data: {
-            labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
-            datasets: [{
-              label: 'Receitas',
-              data: [12, 19, 3, 5, 2, 3],
-              borderWidth: 5},
-
-              {label: 'Despesas',
-              data: [12, 19, 3, 5, 2, 3],
-              borderWidth: 5
-            }]
-          },
-          options: {
-            scales: {
-              y: {
-                beginAtZero: true
-              }
-            }
-          }
-        });
-
-
-        new Chart(graficoReceitasCat,{
-            type: 'doughnut',
-            data: data_grafico_pizza_receitas,
-        });
-
-        new Chart(graficoDespesasCat,{
-            type: 'doughnut',
-            data: data_grafico_pizza_despesas,
-        });
-
-      </script>
+    <script src="/js/app.js">
+    </script>
 </body>
 </html>
