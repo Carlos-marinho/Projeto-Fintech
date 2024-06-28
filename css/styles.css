@@ -4,6 +4,7 @@
     border-radius: 15px;
     align-items: center;
     margin-bottom: 10px;
+    box-shadow: 5px 5px #000;
 }
 
 h3 {
@@ -13,4 +14,3 @@ h3 {
 .menu-lateral {
     border-right: 2px solid gray;
 }
-
